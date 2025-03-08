@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artillery RTS</title>
+    <link rel="stylesheet" href="client/styles/main.css">
+</head>
+<body>
+    <div id="login-overlay" class="overlay">
+        <div class="login-container">
+            <h2>Artillery RTS</h2>
+            <form id="login-form" class="auth-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="auth-submit">Login</button>
+                <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+            </form>
+            <form id="register-form" class="auth-form" style="display: none;">
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <canvas id="game-canvas"></canvas>
+        <div id="hud">
+            <div id="resources">
+                <span>Resources: <span id="resource-count">0</span></span>
+            </div>
+            <div id="artillery-controls">
+                <div id="angle-control">
+                    <label>Angle: <span id="angle-value">45°</span></label>
+                    <input type="range" id="angle-slider" min="0" max="90" value="45">
+                </div>
+                <div id="power-control">
+                    <label>Power: <span id="power-value">50%</span></label>
+                    <input type="range" id="power-slider" min="0" max="100" value="50">
+                </div>
+                <button id="fire-button">FIRE</button>
+            </div>
+            <div id="unit-controls">
+                <button id="infantry-btn" class="unit-btn">Infantry (50)</button>
+                <button id="tank-btn" class="unit-btn">Tank (150)</button>
+                <button id="helicopter-btn" class="unit-btn">Helicopter (200)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="client/dist/bundle.js"></script>
+</body>
+</html>
